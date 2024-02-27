@@ -6,20 +6,20 @@ public class Criba
     {
         int i,j;
         if (max >= 2) {
-// Declaraciones
+            // Declaraciones
             int dim = max + 1; // Tamaño del array
             boolean[] esPrimo = new boolean[dim];
-// Inicializar el array
+            // Inicializar el array
             inicializaVector(dim, esPrimo);
-// Criba
+            // Criba
             cribarNoPrimos(dim, esPrimo);
-// ¿Cuántos primos hay?
+            // ¿Cuántos primos hay?
             int cuenta = cuentaPrimos(dim, esPrimo);
-// Rellenar el vector de números primos
+            // Rellenar el vector de números primos
             return rellenarPrimos(cuenta, dim, esPrimo);
         } else { // max < 2
             return new int[0];
-// Vector vacío
+            // Vector vacío
         }
     }
 
