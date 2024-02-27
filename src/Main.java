@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 /**
  * Clase principal para comprobar el funcionamiento de la clase Criba.
+ * @author Pablo Palanques Gil - Ejercicios T4 - EEDD
  */
 public class Main {
 
