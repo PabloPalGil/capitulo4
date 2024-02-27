@@ -5,9 +5,13 @@ import java.util.Arrays;
  */
 public class Criba
 {
-    final static int PRIMER_PRIMO = 2;//El primer número primo es el 2
+    final static int PRIMER_PRIMO = 2;//El primer número primo siempre es el 2
 
-    // Generar números primos de 1 a max
+    /**
+     * Método que devuelve los números primos del 0 a max.
+     * @param max valor entero hasta el que se identificarán los números primos, desde el 0
+     * @return devuelve un vector de enteros con los números primos en orden desde 0 a max
+     */
     public static int[] generarPrimos (int max)
     {
         if (max >= PRIMER_PRIMO) {
@@ -30,15 +34,23 @@ public class Criba
         }
     }
 
-    private static void inicializaVector(boolean[] esPrimo) {
+    /**
+     * Método que inicializa un vector de tamaño max+1 a true.
+     * @param esPrimo vector de valores booleanos de 0 a max que representa si son o no primos
+     */
+    public static void inicializaVector(boolean[] esPrimo) {
         //Inicializamos el vector con todos los elementos en true
         Arrays.fill(esPrimo, true);
+    }
+
+    /**
+     * Método que pone en false a todos los números que no son primos de 0 a max
+     * @param esPrimo vector de valores booleanos de 0 a max que representa si son o no primos
+     */
+    public static void cribarNoPrimos(boolean[] esPrimo) {
 
         // Eliminar el 0 y el 1, que no son primos
         esPrimo[0] = esPrimo[1] = false;
-    }
-
-    private static void cribarNoPrimos(boolean[] esPrimo) {
 
         for (int i = PRIMER_PRIMO; i < Math.sqrt(esPrimo.length) + 1; i++) {
             if (esPrimo[i]) {
@@ -50,7 +62,12 @@ public class Criba
         }
     }
 
-    private static int cuentaPrimos(boolean[] esPrimo) {
+    /**
+     * Método que contabiliza los números primos (los que han quedado en true tras la criba).
+     * @param esPrimo vector de valores booleanos de 0 a max que representa si son o no primos
+     * @return devuelve un valor entero con la cantidad de elementos true que representa el total de primos
+     */
+    public static int cuentaPrimos(boolean[] esPrimo) {
         int cuenta = 0;
 
         for (boolean b : esPrimo) {
@@ -62,7 +79,14 @@ public class Criba
         return cuenta;
     }
 
-    private static int[] rellenarPrimos(int cuenta, boolean[] esPrimo) {
+    /**
+     * Método que crea y devuelve el vector final con sólo los números primos según las
+     * posiciones correlativas de los elementos en true.
+     * @param cuenta valor entero que indica la cantidad de números primos identificados
+     * @param esPrimo vector de valores booleanos de 0 a max que representa si son o no primos
+     * @return devuelve un vector de valores enteros que son los números primos de 0 al valor de entrada de la clase
+     */
+    public static int[] rellenarPrimos(int cuenta, boolean[] esPrimo) {
         int j;
         int i;
         int[] primos = new int[cuenta];
