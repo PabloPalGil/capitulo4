@@ -5,7 +5,7 @@ public class Main {
         Scanner teclado=new Scanner(System.in);
         System.out.println("Introduce el número para la criba de Erastótenes:");
         int dato=teclado.nextInt();
-        int vector[]=new int[dato];
+        int[] vector =new int[dato];
         System.out.println("\nVector inicial hasta :"+dato);
         mostrarVectorInicial(vector);
         vector= Criba.generarPrimos(dato);
