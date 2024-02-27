@@ -1,11 +1,12 @@
+
 public class Criba
 {
+    final static int PRIMER_PRIMO = 2;//El primer número primo es el 2
+
     // Generar números primos de 1 a max
     public static int[] generarPrimos (int max)
     {
-        int i,j;
-
-        if (max >= 2) {
+        if (max >= PRIMER_PRIMO) {
             // Declaraciones
             int dim = max + 1; // Tamaño del array
             boolean[] esPrimo = new boolean[dim];
@@ -30,7 +31,7 @@ public class Criba
         int i;
         int[] primos = new int[cuenta];
 
-        for (i=0, j=0; i< dim; i++) {
+        for (i = 0, j = 0; i < dim; i++) {
             if (esPrimo[i]){
                 primos[j++] = i;
             }
@@ -40,10 +41,9 @@ public class Criba
     }
 
     private static int cuentaPrimos(int dim, boolean[] esPrimo) {
-        int i;
         int cuenta = 0;
 
-        for (i=0; i< dim; i++) {
+        for (int i = 0; i < dim; i++) {
             if (esPrimo[i]){
                 cuenta++;
             }
@@ -53,27 +53,26 @@ public class Criba
     }
 
     private static void cribarNoPrimos(int dim, boolean[] esPrimo) {
-        int i;
-        int j;
 
-        for (i=2; i<Math.sqrt(dim)+1; i++) {
+        for (int i = PRIMER_PRIMO; i < Math.sqrt(dim) + 1; i++) {
             if (esPrimo[i]) {
                 // Eliminar los múltiplos de i
-                for (j=2*i; j< dim; j+=i){
+                for (int j = 2 * i; j < dim; j += i){
                     esPrimo[j] = false;
                 }
             }
         }
     }
 
-    public static void inicializaVector(int dim, boolean[] esPrimo) {
+    private static void inicializaVector(int dim, boolean[] esPrimo) {
         int i;
 
-        for (i=0; i< dim; i++){
+        for (i = 0; i < dim; i++){
             esPrimo[i] = true;
         }
         
         // Eliminar el 0 y el 1, que no son primos
         esPrimo[0] = esPrimo[1] = false;
     }
+
 }
