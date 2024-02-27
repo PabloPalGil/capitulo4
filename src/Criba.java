@@ -30,12 +30,11 @@ public class Criba
     private static void inicializaVector(boolean[] esPrimo) {
         //Inicializamos el vector con todos los elementos en true
         Arrays.fill(esPrimo, true);
-
-        // Eliminar el 0 y el 1, que no son primos
-        esPrimo[0] = esPrimo[1] = false;
     }
 
     private static void cribarNoPrimos(boolean[] esPrimo) {
+        // Eliminar el 0 y el 1, que no son primos
+        esPrimo[0] = esPrimo[1] = false;
 
         for (int i = PRIMER_PRIMO; i < Math.sqrt(esPrimo.length) + 1; i++) {
             if (esPrimo[i]) {
