@@ -1,6 +1,9 @@
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.Arrays;
 
+/**
+ * Clase CribaTest con varias pruebas unitarias para el cumplimiento funcional durante la refactorización.
+ */
 public class CribaTest {
     int[] noPrimos = new int[0];
     int[] primos7 = {2, 3, 5, 7};
