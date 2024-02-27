@@ -21,14 +21,22 @@ public class Main {
         mostrarVectorPrimos(vector);
     }
 
-    private static void mostrarVectorPrimos(int[] vector) {
+    /**
+     * Método que muestra por consola los números primos hasta el número introducido por teclado.
+     * @param vector
+     */
+    public static void mostrarVectorPrimos(int[] vector) {
         for (int i = 0; i < vector.length; i++) {
             if (i % 10 == 0) System.out.println();
             System.out.print(vector[i] + "\t");
         }
     }
 
-    private static void mostrarVectorInicial(int[] vector) {
+    /**
+     * Método que muestra un vector con todos los números consecutivos hasta el número introducido.
+     * @param vector
+     */
+    public static void mostrarVectorInicial(int[] vector) {
         for (int i = 0; i < vector.length; i++) {
             if (i % 10 == 0) System.out.println();
             System.out.print(i + 1 + "\t");
