@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * Clase principal para comprobar el funcionamiento de la clase Criba.
+ */
 public class Main {
 
     public static void main(String[] args) {
